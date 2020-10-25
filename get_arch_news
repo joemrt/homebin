@@ -1,2 +1,2 @@
 #!/bin/bash
-$HOME/bin/create_news_html.py && lynx /tmp/arch_news.html 
+$HOME/bin/create_news_html.py | lynx /tmp/arch_news.html --stdin
