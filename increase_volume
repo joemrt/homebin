@@ -2,3 +2,6 @@
 sink=$(pactl list short sinks | awk '/RUNNING/{print $1}')
 # notify-send "Volume +5%" -t 500
 pactl set-sink-volume $sink '+5%'
+volume=$(pamixer --sink $sink --get-volume)
+dunstify -r 9 -u low "Volume $volume %"
+canberra-gtk-play -i audio-volume-change
