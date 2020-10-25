@@ -1,0 +1,10 @@
+#!/bin/bash
+critical_level=10
+battery_level=$(cat /sys/class/power_supply/BAT0/capacity)
+charging=$(cat /sys/class/power_supply/BAT0/status)
+
+if [[ $battery_level -lt $critical_level ]] && [[ $charging = "Discharging" ]]; then
+	echo "Low battery"
+	message="Battery level below $critical_level%"
+	dunstify -u critical -r 10 "$message" 
+fi
