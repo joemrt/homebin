@@ -1,0 +1,3 @@
+#!/bin/bash
+
+feh --bg-scale --randomize /usr/share/backgrounds/cynicalteam/*.{jpg,png}

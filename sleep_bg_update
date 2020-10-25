@@ -1,0 +1,7 @@
+#/bin/bash
+while true
+do
+  feh --randomize --bg-fill ~/src/wallpapers/Landscapes/*
+  sleep 1200
+done
+	
