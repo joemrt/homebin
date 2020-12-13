@@ -1,0 +1,10 @@
+#!/bin/bash
+monitor=$(bspc query -M -d --names); \
+HDMI1_status=$(xrandr -q | awk '/^HDMI1/{print $2}'); \
+if [[ $HDMI1_status = 'connected' ]] && [[ $monitor = "eDP1" ]]; then \
+	mon_id=1;\
+else \
+	mon_id=0;\
+fi;\
+( xrandr -q | awk '/^HDMI1/{print $2}' ) > ~/tmp/outy; \
+rofi -m $mon_id $@
